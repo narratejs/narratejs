@@ -18,11 +18,19 @@ exports.fetchPostBySlug = void 0;
  */
 function fetchPostBySlug(slug) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch(`https://jsonplaceholder.typicode.com/todos/${slug}`);
-        if (!response.ok) {
-            throw new Error("Failed to fetch post metadata");
+        try {
+            const response = yield fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
+            if (!response.ok) {
+                // Instead of throwing an error, resolve with null
+                return null;
+            }
+            return response.json();
         }
-        return response.json();
+        catch (error) {
+            // If an error occurs during fetch or response processing, resolve with null
+            console.error("Error fetching post by slug:", error);
+            return null;
+        }
     });
 }
 exports.fetchPostBySlug = fetchPostBySlug;

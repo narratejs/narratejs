@@ -16,7 +16,7 @@ declare module "narratejs" {
   export interface BlogProviderProps {
     children: React.ReactNode;
     config: {
-      backendProvider: "supabase"; // Add more backend options as you expand
+      backendProvider: "supabase" | "jsonplaceholder"; // Add more backend options as you expand
       supabaseConfig?: {
         supabaseUrl: string;
         supabaseAnonKey: string;
@@ -40,7 +40,7 @@ declare module "narratejs" {
 
   // Define the configuration type for initNarrateJS
   export interface NarrateJSConfig {
-    backendProvider: "supabase";
+    backendProvider: "supabase" | "jsonplaceholder";
     supabaseConfig?: {
       supabaseUrl: string;
       supabaseAnonKey: string;
@@ -49,4 +49,6 @@ declare module "narratejs" {
   }
 
   export function getConfig(): NarrateJSConfig;
+
+  export function fetchPostBySlug(slug: string): Promise<any>;
 }
