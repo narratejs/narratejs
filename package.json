@@ -1,13 +1,17 @@
 {
-  "name": "narratejs",
-  "version": "0.0.2",
+  "name": "narratejs-monorepo",
+  "version": "0.0.3",
   "description": "A blogging system for NextJS",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "version": "auto-changelog -p && git add CHANGELOG.md",
-    "build": "npx tsc && npm run version"
+    "dev": "npm run dev --workspace=example-nextjs-app",
+    "changelog": "npm run changelog --workspace=narratejs",
+    "build": "npm run build --workspace=narratejs"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "keywords": [
     "blogging",
     "nextjs",

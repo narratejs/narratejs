@@ -16,11 +16,14 @@
       <img src="https://img.shields.io/github/stars/narratejs/narratejs?style=flat-square" alt="Github Stars" />
     </a>
     <a href="https://www.npmjs.com/package/narratejs">
-      <img src="https://img.shields.io/github/v/release/narratejs/narratejs?label=latest&style=flat-square" alt="Github Stable Release" />
+      <img src="https://img.shields.io/github/v/tag/narratejs/narratejs" alt="Github Stable Release" />
     </a>
   </p>
   <p align="center">
     NarrateJS is a set of packages and functions that make it easy to drop in a fully functional article/blog system. Use any backend provider (eg. Supabase, MongoDB).
+  </p>
+    <p align="center">
+    This is the monorepo which includes the source code as well as an example NextJS project to demo the package.
   </p>
   <p align="center">
     See <a href="https://authjs.dev">narratejs.com</a> for our documentation and more information.
