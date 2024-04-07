@@ -15,6 +15,14 @@ declare module "narratejs" {
   // Declare the BlogProviderProps interface
   export interface BlogProviderProps {
     children: React.ReactNode;
+    config: {
+      backendProvider: "supabase"; // Add more backend options as you expand
+      supabaseConfig?: {
+        supabaseUrl: string;
+        supabaseAnonKey: string;
+      };
+      // Add any other configurations here
+    };
   }
 
   // Declare the BlogProvider component

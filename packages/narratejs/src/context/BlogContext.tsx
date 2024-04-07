@@ -1,5 +1,6 @@
 "use client";
 
+import { BlogProviderProps } from "narratejs";
 import React, {
   createContext,
   useContext,
@@ -15,13 +16,24 @@ const BlogContext = createContext({
   setPosts: (() => {}) as Dispatch<SetStateAction<never[]>>,
 });
 
-// Explicitly typing the props with children
-export interface BlogProviderProps {
-  children: React.ReactNode;
-}
-
-export const BlogProvider: React.FC<BlogProviderProps> = ({ children }) => {
+export const BlogProvider: React.FC<BlogProviderProps> = ({
+  children,
+  config,
+}: BlogProviderProps) => {
   const [posts, setPosts] = useState([]);
+  const [supabase, setSupabase] = useState(null);
+
+  useEffect(() => {
+    if (config.backendProvider === "supabase" && config.supabaseConfig) {
+      // Initialize Supabase client
+      // const supabaseClient = createClient(
+      //   config.supabaseConfig.supabaseUrl,
+      //   config.supabaseConfig.supabaseAnonKey
+      // );
+      // setSupabase(supabaseClient);
+    }
+    // Handle initialization for other backends as you add support for them
+  }, [config]);
 
   const fetchPosts = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/todos");
