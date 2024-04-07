@@ -1,4 +1,7 @@
-import BlogProvider, { BlogProviderProps } from './context/BlogContext';
-import BlogPost, { BlogPostProps } from './BlogPost';
+import BlogProvider from "./context/BlogContext";
+import { BlogProviderProps, BlogPostProps } from "narratejs";
+import BlogPost from "./BlogPost";
+import { useBlog } from "./context/BlogContext";
 
-export { BlogPost, BlogProvider, BlogPostProps, BlogProviderProps };
+export * from "./server/index";
+export { BlogPost, BlogProvider, BlogPostProps, BlogProviderProps, useBlog };

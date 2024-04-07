@@ -1,6 +1,6 @@
 {
-  "name": "narratejs",
-  "version": "0.0.4",
+  "name": "narratejs-monorepo",
+  "version": "0.0.5",
   "description": "A blogging system for NextJS",
   "main": "src/index.js",
   "scripts": {

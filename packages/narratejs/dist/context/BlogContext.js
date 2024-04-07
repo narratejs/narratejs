@@ -39,14 +39,28 @@ const BlogContext = (0, react_1.createContext)({
     posts: [],
     setPosts: (() => { }),
 });
-const BlogProvider = ({ children }) => {
+const BlogProvider = ({ children, config, }) => {
     const [posts, setPosts] = (0, react_1.useState)([]);
+    const [supabase, setSupabase] = (0, react_1.useState)(null);
+    (0, react_1.useEffect)(() => {
+        if (config.backendProvider === "supabase" && config.supabaseConfig) {
+            // Initialize Supabase client
+            // const supabaseClient = createClient(
+            //   config.supabaseConfig.supabaseUrl,
+            //   config.supabaseConfig.supabaseAnonKey
+            // );
+            // setSupabase(supabaseClient);
+        }
+        // Handle initialization for other backends as you add support for them
+    }, [config]);
     const fetchPosts = () => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield fetch("https://jsonplaceholder.typicode.com/todos");
         const data = yield response.json();
         setPosts(data);
+        // console.log(data, "POSTS...........");
     });
     (0, react_1.useEffect)(() => {
+        // console.log("BLOG CONTEXT USE EFFECT RAN.. FETCHING POSTS...");
         fetchPosts();
     }, []);
     const value = { posts, setPosts };
@@ -54,5 +68,11 @@ const BlogProvider = ({ children }) => {
 };
 exports.BlogProvider = BlogProvider;
 exports.default = exports.BlogProvider;
-const useBlog = () => (0, react_1.useContext)(BlogContext);
+const useBlog = () => {
+    const context = (0, react_1.useContext)(BlogContext);
+    if (context === undefined) {
+        throw new Error("useBlog must be used within a BlogProvider");
+    }
+    return context;
+};
 exports.useBlog = useBlog;

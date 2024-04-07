@@ -39,9 +39,11 @@ export const BlogProvider: React.FC<BlogProviderProps> = ({
     const response = await fetch("https://jsonplaceholder.typicode.com/todos");
     const data = await response.json();
     setPosts(data);
+    // console.log(data, "POSTS...........");
   };
 
   useEffect(() => {
+    // console.log("BLOG CONTEXT USE EFFECT RAN.. FETCHING POSTS...");
     fetchPosts();
   }, []);
 
@@ -52,4 +54,10 @@ export const BlogProvider: React.FC<BlogProviderProps> = ({
 
 export default BlogProvider;
 
-export const useBlog = () => useContext(BlogContext);
+export const useBlog = () => {
+  const context = useContext(BlogContext);
+  if (context === undefined) {
+    throw new Error("useBlog must be used within a BlogProvider");
+  }
+  return context;
+};

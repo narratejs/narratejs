@@ -27,4 +27,26 @@ declare module "narratejs" {
 
   // Declare the BlogProvider component
   export const BlogProvider: React.FC<BlogProviderProps>;
+
+  export interface BlogContextValue {
+    addPost: (post: BlogPostProps) => Promise<void>;
+    posts: BlogPostProps[];
+    // Assuming you have a method to add posts
+    // Add other context values here, such as methods to delete or update posts, or perhaps the posts themselves
+  }
+
+  // Declare the useBlog hook
+  export function useBlog(): BlogContextValue;
+
+  // Define the configuration type for initNarrateJS
+  export interface NarrateJSConfig {
+    backendProvider: "supabase";
+    supabaseConfig?: {
+      supabaseUrl: string;
+      supabaseAnonKey: string;
+    };
+    // Add other configuration fields as needed
+  }
+
+  export function getConfig(): NarrateJSConfig;
 }

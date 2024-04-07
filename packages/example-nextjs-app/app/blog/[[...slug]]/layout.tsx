@@ -1,21 +1,18 @@
 import { BlogProvider } from "narratejs";
 
-export default function RootLayout({
+const narratejsConfig: any = {
+  backendProvider: "supabase",
+  supabaseConfig: {
+    supabaseAnonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string,
+    supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL as string,
+  },
+};
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <BlogProvider
-      config={{
-        backendProvider: "supabase",
-        supabaseConfig: {
-          supabaseAnonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string,
-          supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL as string,
-        },
-      }}
-    >
-      {children}
-    </BlogProvider>
-  );
+  // const {} = await fetchPostBySlug()
+  return <BlogProvider config={narratejsConfig}>{children}</BlogProvider>;
 }

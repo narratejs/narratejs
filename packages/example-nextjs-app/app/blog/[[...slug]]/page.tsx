@@ -1,9 +1,14 @@
-import React from "react";
-import { BlogPost, BlogProvider } from "narratejs";
+"use client";
 
-const Page = async ({ params }: { params: { slug: any } }) => {
+import { useBlog } from "narratejs";
+import React from "react";
+
+const Page = ({ params }: { params: { slug: any } }) => {
   // const blog = await getBlogBySlug(params.slug)
-  return <div>Hello World. Page.</div>;
+  const { posts } = useBlog();
+  console.log(posts);
+
+  return <div>There are {posts?.length} blogs loaded...</div>;
 };
 
 export default Page;
