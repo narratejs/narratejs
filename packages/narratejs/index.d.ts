@@ -50,5 +50,15 @@ declare module "narratejs" {
 
   export function getConfig(): NarrateJSConfig;
 
+  /**
+   * Fetches specific blog post by slug name via 3rd party backend.
+   * @param {string} slug The slug of the post to fetch the data for.
+   * @returns {Promise<any>} The data for the blog post.
+   */
   export function fetchPostBySlug(slug: string): Promise<any>;
+
+  /**
+   * The Admin component for NarrateJS.
+   */
+  export const AdminComponent: React.FC<any>;
 }

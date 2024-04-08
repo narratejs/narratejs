@@ -1,4 +1,9 @@
-import { BlogProvider, NarrateJSConfig, fetchPostBySlug } from "narratejs";
+import {
+  AdminComponent,
+  BlogProvider,
+  NarrateJSConfig,
+  fetchPostBySlug,
+} from "narratejs";
 import { notFound } from "next/navigation";
 
 const narratejsConfig: NarrateJSConfig = {
@@ -16,6 +21,8 @@ export default async function Layout({
   children: React.ReactNode;
   params: { slug: string };
 }>) {
+  console.log(params.slug);
+  if (params.slug[0] === "admin") return <AdminComponent />;
   const post = await fetchPostBySlug(params.slug);
   if (!post) notFound();
 
@@ -25,8 +32,8 @@ export default async function Layout({
   return (
     <BlogProvider config={narratejsConfig}>
       <div className="p-5">
-        <h1 className="text-2xl font-bold mb-2">{post.title}</h1>
-        <p className="mb-10">{post.body}</p>
+        <h1 className="text-2xl font-bold mb-2">{post?.title}</h1>
+        <p className="mb-10">{post?.body}</p>
         {children}
       </div>
     </BlogProvider>

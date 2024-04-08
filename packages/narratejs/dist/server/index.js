@@ -11,11 +11,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchPostBySlug = void 0;
-/**
- * Fetches specific blog post by slug name via 3rd party backend.
- * @param {string} slug The slug of the post to fetch the data for.
- * @returns {Promise<any>} The data for the blog post.
- */
 function fetchPostBySlug(slug) {
     return __awaiter(this, void 0, void 0, function* () {
         try {

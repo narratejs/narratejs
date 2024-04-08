@@ -3,6 +3,7 @@ import { BlogProviderProps, BlogPostProps } from "narratejs";
 import BlogPost from "./BlogPost";
 import { useBlog } from "./context/BlogContext";
 import { fetchPostBySlug } from "./server";
+import AdminComponent from "./components/admin-component";
 
 export {
   BlogPost,
@@ -11,4 +12,5 @@ export {
   BlogProviderProps,
   useBlog,
   fetchPostBySlug,
+  AdminComponent,
 };
