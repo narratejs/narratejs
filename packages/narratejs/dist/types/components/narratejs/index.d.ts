@@ -1,9 +1,4 @@
-import React from "react";
-export default function NarrateJS({ children, config, params, }: Readonly<{
-    children: React.ReactNode;
-    config: any;
-    params: {
-        slug: string;
-    };
-}>): Promise<React.JSX.Element>;
+import { NextPage } from "next";
+declare const NarrateJS: NextPage;
+export default NarrateJS;
 //# sourceMappingURL=index.d.ts.map

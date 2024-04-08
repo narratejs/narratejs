@@ -9,10 +9,9 @@ import NarrateJS from "./components/narratejs";
 export {
   BlogPost,
   BlogProvider,
-  BlogPostProps,
-  BlogProviderProps,
   useBlog,
   fetchPostBySlug,
   AdminComponent,
   NarrateJS,
 };
+export type { BlogPostProps, BlogProviderProps };

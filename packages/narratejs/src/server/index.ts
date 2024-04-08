@@ -1,18 +1,18 @@
 "use server";
 
-export async function fetchPostBySlug(slug: string): Promise<any> {
+export async function fetchPostBySlug(slug: string) {
   try {
     const response = await fetch(
       `https://jsonplaceholder.typicode.com/posts/${slug}`
     );
     if (!response.ok) {
-      // Instead of throwing an error, resolve with null
-      return null;
+      // Handle non-2xx responses
+      throw new Error("Failed to fetch post");
     }
-    return response.json();
+    return await response.json(); // Parse and return the JSON response
   } catch (error) {
-    // If an error occurs during fetch or response processing, resolve with null
+    // Error handling (e.g., logging, rethrowing the error, or returning a default value)
     console.error("Error fetching post by slug:", error);
-    return null;
+    throw error; // Rethrow or handle as appropriate
   }
 }

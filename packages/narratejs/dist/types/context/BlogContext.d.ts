@@ -1,4 +1,3 @@
-/// <reference types="index" />
 import { BlogProviderProps } from "narratejs";
 import React from "react";
 export declare const BlogProvider: React.FC<BlogProviderProps>;

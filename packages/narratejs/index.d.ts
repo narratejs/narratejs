@@ -1,5 +1,7 @@
 // index.d.ts
 
+import { NextPage } from "next";
+
 declare module "narratejs" {
   import * as React from "react";
 
@@ -65,5 +67,5 @@ declare module "narratejs" {
   /**
    * The NarrateJS Component.
    */
-  export const NarrateJS: React.FC<any>;
+  export const NarrateJS: NextPage;
 }

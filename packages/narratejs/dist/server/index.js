@@ -1,31 +1,16 @@
-"use strict";
 "use server";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.fetchPostBySlug = void 0;
-function fetchPostBySlug(slug) {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const response = yield fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
-            if (!response.ok) {
-                // Instead of throwing an error, resolve with null
-                return null;
-            }
-            return response.json();
+export async function fetchPostBySlug(slug) {
+    try {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
+        if (!response.ok) {
+            // Handle non-2xx responses
+            throw new Error("Failed to fetch post");
         }
-        catch (error) {
-            // If an error occurs during fetch or response processing, resolve with null
-            console.error("Error fetching post by slug:", error);
-            return null;
-        }
-    });
+        return await response.json(); // Parse and return the JSON response
+    }
+    catch (error) {
+        // Error handling (e.g., logging, rethrowing the error, or returning a default value)
+        console.error("Error fetching post by slug:", error);
+        throw error; // Rethrow or handle as appropriate
+    }
 }
-exports.fetchPostBySlug = fetchPostBySlug;

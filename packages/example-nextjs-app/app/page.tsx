@@ -1,14 +1,22 @@
 import Image from "next/image";
+import React from "react";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
+        <div className="fixed left-0 top-0 flex flex-col gap-2 w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+          <p>
+            Get started by editing&nbsp;
+            <code className="font-mono font-bold">app/page.tsx</code>
+          </p>
+          <p>
+            Read a random blog article&nbsp;
+            <code className="font-mono font-bold">blog/{`<1-100>`}</code>
+          </p>
+        </div>
+
+        <div className="fixed bottom-0 left-0 flex items-center h-48 w-full gap-5 justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
             className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
@@ -24,7 +32,26 @@ export default function Home() {
               height={24}
               priority
             />
-          </a>
+          </a>{" "}
+          and{" "}
+          <div className="flex items-center gap-2">
+            <a
+              className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.narratejs.com"
+            >
+              <Image
+                alt="NarrateJS Logo"
+                src="https://www.narratejs.com/images/logo_white.png"
+                width={500}
+                height={500}
+                priority
+                className="w-10"
+              />
+              <span className="font-bold text-xl">NarrateJS</span>
+            </a>
+          </div>
         </div>
       </div>
 

@@ -1,12 +1,28 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
     "declaration": true,
     "declarationDir": "./dist/types",
     "outDir": "./dist",
     "baseUrl": "./",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "allowJs": true,
+    "declarationMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "stripInternal": true,
+    "target": "es2020"
   },
-  "include": ["src/**/*", "index.d.ts"],
-  "references": [] /* If using project references, list them here */
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "*.js", "*.d.ts"]
 }
