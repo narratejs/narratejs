@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AdminComponent = exports.fetchPostBySlug = exports.useBlog = exports.BlogProvider = exports.BlogPost = void 0;
+exports.NarrateJS = exports.AdminComponent = exports.fetchPostBySlug = exports.useBlog = exports.BlogProvider = exports.BlogPost = void 0;
 const BlogContext_1 = __importDefault(require("./context/BlogContext"));
 exports.BlogProvider = BlogContext_1.default;
 const BlogPost_1 = __importDefault(require("./BlogPost"));
@@ -14,3 +14,5 @@ const server_1 = require("./server");
 Object.defineProperty(exports, "fetchPostBySlug", { enumerable: true, get: function () { return server_1.fetchPostBySlug; } });
 const admin_component_1 = __importDefault(require("./components/admin-component"));
 exports.AdminComponent = admin_component_1.default;
+const narratejs_1 = __importDefault(require("./components/narratejs"));
+exports.NarrateJS = narratejs_1.default;

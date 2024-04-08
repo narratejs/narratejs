@@ -61,4 +61,9 @@ declare module "narratejs" {
    * The Admin component for NarrateJS.
    */
   export const AdminComponent: React.FC<any>;
+
+  /**
+   * The NarrateJS Component.
+   */
+  export const NarrateJS: React.FC<any>;
 }
