@@ -1,12 +1,16 @@
 {
   "name": "narratejs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A blogging system for NextJS",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
+    "publish": "npm publish",
     "dev": "npx tsc --watch --project ./tsconfig.json"
   },
   "keywords": [],
