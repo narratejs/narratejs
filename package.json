@@ -1,6 +1,6 @@
 {
   "name": "narratejs",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "A blogging system for NextJS",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -15,13 +15,15 @@
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "dev": "npm-run-all --parallel watch:tsc watch:tailwind",
     "watch:tsc": "tsc --watch --project ./tsconfig.json",
-    "watch:tailwind": "tailwindcss build -i src/global.css -o dist/narratejs.css --watch",
+    "watch:tailwind": "npx tailwindcss build -i src/global.css -o dist/narratejs.css --watch",
     "build:css": "npx tailwindcss build -i src/global.css -o dist/narratejs.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.12.6",
     "@types/react": "^18.2.75",
     "auto-changelog": "^2.4.0",
     "npm-run-all": "^4.1.5",
@@ -30,7 +32,9 @@
   },
   "dependencies": {
     "cssnano": "^6.1.2",
+    "fs-extra": "^11.2.0",
     "next": "^14.1.4",
+    "process": "^0.11.10",
     "react": "^18.2.0"
   }
 }

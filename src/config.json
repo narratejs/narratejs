@@ -1,0 +1,5 @@
+{
+  "backendProvider": "jsonplaceholder",
+  "slugName": "blog",
+  "adminName": "admin"
+}

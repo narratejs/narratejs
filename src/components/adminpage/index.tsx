@@ -1,21 +1,16 @@
-import React from "react";
-import { getOptions } from "../configureOptions";
+import React, { useEffect } from "react";
+import testServer from "../server";
 
 const AdminPage = () => {
-  const options = getOptions();
-
-  const listOptions = () => {
-    return Object.entries(options).map(([key, value]) => (
-      <li key={key}>{`${key}: ${value}`}</li>
-    ));
-  };
-
-  // console.log(options);
   return (
-    <div className="flex flex-col gap-2 min-h-screen text-red-600">
-      <h1 className="text-6xl font-bold">NarrateJS Admin Page</h1>
-      <h2 className="font-bold">Options</h2>
-      <ul className="list-disc">{listOptions()}</ul>
+    <div className="flex flex-col gap-2 min-h-screen p-5">
+      <div className="flex gap-2 items-center">
+        <img
+          src="https://www.narratejs.com/images/narratejs_logo.png"
+          className="w-10"
+        />
+        <h1 className="text-4xl font-bold">NarrateJS Admin Page</h1>
+      </div>
     </div>
   );
 };
