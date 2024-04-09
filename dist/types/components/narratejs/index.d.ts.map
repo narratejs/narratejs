@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../src/components/narratejs/index.tsx"],"names":[],"mappings":"AAEA,KAAK,KAAK,GAAG;IACX,OAAO,EAAE;QACP,eAAe,EAAE,UAAU,GAAG,iBAAiB,CAAC;KACjD,CAAC;IACF,MAAM,CAAC,EAAE,EAAE,CAAC;IACZ,YAAY,CAAC,EAAE,EAAE,CAAC;CACnB,CAAC;AAEF,QAAA,MAAM,SAAS;wCAAuC,KAAK;;;;;;;CAO1D,CAAC;AAUF,eAAe,SAAS,CAAC"}
