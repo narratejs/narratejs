@@ -12,7 +12,8 @@
     "build": "npx tsc",
     "publish": "npm publish",
     "version": "auto-changelog -p && git add CHANGELOG.md",
-    "dev": "npx tsc --watch --project ./tsconfig.json"
+    "dev": "npx tsc --watch --project ./tsconfig.json",
+    "build:css": "npx tailwindcss build -i src/global.css -o dist/narratejs.css"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,9 @@
   "devDependencies": {
     "@types/react": "^18.2.75",
     "auto-changelog": "^2.4.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
     "typescript": "^5.4.4"
   },
   "dependencies": {
