@@ -1,4 +1,4 @@
-import { displayObjectProperties } from "../../lib/util";
+"use client";
 
 const AdminPage = ({ options }: any) => {
   console.log(options);
@@ -11,7 +11,6 @@ const AdminPage = ({ options }: any) => {
         />
         <h1 className="text-4xl font-bold">NarrateJS Admin Page</h1>
       </div>
-      <div>{displayObjectProperties(options)}</div>
     </div>
   );
 };

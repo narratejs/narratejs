@@ -13,13 +13,13 @@ type Props = {
 };
 
 const NarrateJS = ({ options, params, searchParams }: Props) => {
-  // console.log(params, "PARAMS");
-  // console.log(options);
+  console.log(params, "PARAMS");
+  console.log(options, "OPTIONS");
 
   if (!params?.narratejs) return <MainPage />;
   if (params?.narratejs?.[0] === options.adminSlug)
     return <AdminPage options={options} />;
-  return <BlogPage slug={params.narratejs} />;
+  return <BlogPage options={options} slug={params.narratejs} />;
 };
 
 export default NarrateJS;

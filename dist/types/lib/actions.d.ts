@@ -6,4 +6,4 @@ export declare function FetchJSONBlogBySlug(slug: string): Promise<{
     image_url: string;
     slug: string;
 }>;
-//# sourceMappingURL=util.d.ts.map
+//# sourceMappingURL=actions.d.ts.map
