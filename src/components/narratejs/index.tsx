@@ -1,28 +1,25 @@
-import { NextPage } from "next";
+import { notFound } from "next/navigation";
+import AdminPage from "../adminpage";
+import MainPage from "../mainpage";
+import BlogPage from "../blogpage";
 
 type Props = {
   options: {
     backendProvider: "supabase" | "jsonplaceholder";
+    adminSlug: string;
   };
-  params?: {};
+  params?: { narratejs: string[] };
   searchParams?: {};
 };
 
 const NarrateJS = ({ options, params, searchParams }: Props) => {
-  return (
-    <div className="min-h-screen p-5">
-      <h1>{options.backendProvider}</h1>
-      <p>Welcome to my home page!</p>
-    </div>
-  );
-};
+  // console.log(params, "PARAMS");
+  // console.log(options);
 
-NarrateJS.getInitialProps = async () => {
-  // fetch some data here
-  return {
-    title: "My Home Page",
-    options: { backendProvider: "jsonplaceholder" },
-  };
+  if (!params?.narratejs) return <MainPage />;
+  if (params?.narratejs?.[0] === options.adminSlug)
+    return <AdminPage options={options} />;
+  return <BlogPage slug={params.narratejs} />;
 };
 
 export default NarrateJS;

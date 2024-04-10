@@ -1,3 +1,3 @@
-declare const AdminPage: () => import("react/jsx-runtime").JSX.Element;
+declare const AdminPage: ({ options }: any) => import("react/jsx-runtime").JSX.Element;
 export default AdminPage;
 //# sourceMappingURL=index.d.ts.map

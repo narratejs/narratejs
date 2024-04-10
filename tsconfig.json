@@ -20,10 +20,10 @@
     "strict": true,
     "strictNullChecks": true,
     "stripInternal": true,
-    "target": "ESNext",
+    "target": "es2020",
     "esModuleInterop": true,
     "composite": true /* Enable project references */
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "*.js", "*.d.ts"]
+  "exclude": ["node_modules", "*.js", "*.d.ts", "*.css"]
 }

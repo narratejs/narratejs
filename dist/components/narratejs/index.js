@@ -1,12 +1,14 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { jsx as _jsx } from "react/jsx-runtime";
+import AdminPage from "../adminpage";
+import MainPage from "../mainpage";
+import BlogPage from "../blogpage";
 const NarrateJS = ({ options, params, searchParams }) => {
-    return (_jsxs("div", { className: "min-h-screen p-5", children: [_jsx("h1", { children: options.backendProvider }), _jsx("p", { children: "Welcome to my home page!" })] }));
-};
-NarrateJS.getInitialProps = async () => {
-    // fetch some data here
-    return {
-        title: "My Home Page",
-        options: { backendProvider: "jsonplaceholder" },
-    };
+    // console.log(params, "PARAMS");
+    // console.log(options);
+    if (!params?.narratejs)
+        return _jsx(MainPage, {});
+    if (params?.narratejs?.[0] === options.adminSlug)
+        return _jsx(AdminPage, { options: options });
+    return _jsx(BlogPage, { slug: params.narratejs });
 };
 export default NarrateJS;
